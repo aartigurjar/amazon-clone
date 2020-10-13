@@ -5,26 +5,15 @@ import { useStateValue } from './StateProvider';
 
 function Product({ id, title, image, price, rating }) {
 
-    const { dispatch } = useStateValue();
+    const [{ basket }, dispatch] = useStateValue();
 
     console.log({ dispatch }) ;
 
 
-    /* Issue - Dispatch is undefined
-    
-        
-    
-    
-    */
-
-
-
-
-    // console.log("basket", basket);
-
     const addToBasket = () => {
+        console.log("this function is called!");
 
-        //dispatch item to data layer
+        // dispatch item to data layer
         dispatch ({
             type: 'ADD_TO_BASKET',
             item: {
@@ -35,9 +24,9 @@ function Product({ id, title, image, price, rating }) {
                 image: image 
             }
 
-        })
+        });
 
-    }
+    };
 
 
 

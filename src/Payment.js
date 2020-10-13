@@ -49,7 +49,8 @@ function Payment() {
                 card: elements.getElement(CardElement)
             }
         }).then(({ paymentIntent }) => {
-            // paymentIntent = payment confirmation
+            
+
 
             db
               .collection('users')
@@ -129,7 +130,7 @@ function Payment() {
                         <h3>Payment Method</h3>
                     </div>
                     <div className="payment__details">
-                            {/* Stripe magic will go */}
+                           
 
                             <form onSubmit={handleSubmit}>
                                 <CardElement onChange={handleChange}/>
@@ -150,7 +151,7 @@ function Payment() {
                                     </button>
                                 </div>
 
-                                  {/* Errors */}
+                                  
                                 {error && <div>{error}</div>}
                             </form>
                     </div>
